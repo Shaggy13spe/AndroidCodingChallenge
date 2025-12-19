@@ -113,30 +113,36 @@ UI polish is **not** the focus. Clear state handling is.
 
 ## 🔁 Git Workflow (Required)
 
-You will submit your work using a **branch-per-candidate** approach.
+You will submit your work using the following approach.
 
 ### Branch workflow
 
-Create a branch named:
+A branch in the repo will be created for you
 
 ```
 candidate/<your-name>
 ```
 
-Example:
+You need to fork the repo, do the work, and submit a PR
 
 ```
-candidate/jane-doe
-```
+# fork on GitHub then clone your fork
+git clone https://github.com/<candidate-username>/AndroidCodingChallenge.git
+cd AndroidCodingChallenge
 
-Then:
-
-```bash
+# create branch (match upstream name)
 git checkout -b candidate/<your-name>
-git commit -am "Interview submission"
-git push origin candidate/<your-name>
-```
 
+# implement work...
+git add .
+git commit -m "Interview submission"
+git push origin candidate/<your-name>
+
+# Open PR on GitHub:
+# Base repository: Shaggy13spe/AndroidCodingChallenge
+# Base branch: candidate/<your-name>        <-- important
+# Compare branch: <candidate-username>/candidate/jane-doe
+```
 Do **not** merge your branch into `main`.
 
 ---
