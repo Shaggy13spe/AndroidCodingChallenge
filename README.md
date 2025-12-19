@@ -1,9 +1,10 @@
 # AndroidCodingChallenge
 
 This repository contains a starter Android project for a **time-boxed coding interview**.
-The project builds and runs out of the box and displays a placeholder screen.
 
-During the interview, you will implement the missing pieces to complete the challenge.
+The project **builds and runs out of the box** and displays a placeholder screen.  
+It is intentionally incomplete — during the interview, you will implement the missing
+pieces to complete the challenge.
 
 ---
 
@@ -11,14 +12,14 @@ During the interview, you will implement the missing pieces to complete the chal
 
 **30 minutes**
 
-You are not expected to finish everything perfectly.
+You are not expected to finish everything perfectly.  
 We care more about **architecture, decisions, and clarity** than polish.
 
 ---
 
 ## 🎯 Goal
 
-Build a small Android app using **Jetpack Compose**, **MVVM**, and **Clean Architecture** that:
+Build a small Android app using **Jetpack Compose**, **MVVM**, **Clean Architecture**, and **Hilt** that:
 
 - Fetches data from a public API
 - Displays it in a list
@@ -31,36 +32,48 @@ Build a small Android app using **Jetpack Compose**, **MVVM**, and **Clean Archi
 
 Use **JSONPlaceholder** (no API key required):
 
+```
 GET https://jsonplaceholder.typicode.com/posts
+```
 
 Each post contains:
-- userId
-- id
-- title
-- body
+- `userId`
+- `id`
+- `title`
+- `body`
 
 ---
 
-## 🧱 Architecture Requirements
+## 🧱 Architecture & DI Requirements
 
-Implement the missing code using the following layers:
+This project is already configured to use **Hilt for dependency injection**.
 
+You are expected to:
+- Use **constructor injection** where appropriate
+- Rely on the existing Hilt setup (`@HiltAndroidApp`, modules, bindings)
+- Inject dependencies into ViewModels using Hilt
+
+### Target architecture
+
+```
 UI (Compose)
-↓
+  ↓
 ViewModel
-↓
+  ↓
 UseCase
-↓
+  ↓
 Repository
-↓
+  ↓
 RemoteDataSource (API)
+```
 
 Required concepts:
 - Jetpack Compose
 - ViewModel
 - Coroutines
-- State management (StateFlow, LiveData, etc.)
+- State management (`StateFlow`, `LiveData`, etc.)
 - Dependency inversion
+- Hilt-based dependency injection
 
 ---
 
@@ -68,44 +81,69 @@ Required concepts:
 
 All implementation should happen under:
 
+```
 app/src/main/java/com/greatminds/androidcodingchallenge/
+```
 
-The files are already created for you but contain only placeholders.
+The necessary files **already exist** and are **stubbed out** so the project builds.
+Your task is to **complete and connect these files** to achieve the goals of the exercise.
+
+You are expected to work in (at minimum):
+
+- `model/`
+- `data/`
+- `domain/`
+- `ui/`
+- `ui/compose/`
 
 ---
 
 ## 🖥 UI Requirements
 
 Your UI should:
-- Display a list of posts using LazyColumn
-- Show loading, error, and empty states
-- Support refresh (pull-to-refresh or button)
-- Handle item click (navigate or expand)
 
-UI polish is not the focus.
+- Display a list of posts using `LazyColumn`
+- Show **loading**, **error**, and **empty** states
+- Support refresh (pull-to-refresh or button)
+- Handle item click (navigate or expand — your choice)
+
+UI polish is **not** the focus. Clear state handling is.
 
 ---
 
 ## 🔁 Git Workflow (Required)
 
-### Option A: Fork (preferred)
+You will submit your work using the following approach.
 
-1. Fork this repository
-2. Create a branch named:
+### Branch workflow
 
+A branch in the repo will be created for you
+
+```
 candidate/<your-name>
+```
 
-Example:
-candidate/jane-doe
+You need to fork the repo, do the work, and submit a PR
 
-3. Commit your work
-4. Open a Pull Request back to the original repository
+```
+# fork on GitHub then clone your fork
+git clone https://github.com/<candidate-username>/AndroidCodingChallenge.git
+cd AndroidCodingChallenge
 
-### Option B: Branch (if instructed)
-
+# create branch (match upstream name)
 git checkout -b candidate/<your-name>
-git commit -am "Interview submission"
+
+# implement work...
+git add .
+git commit -m "Interview submission"
 git push origin candidate/<your-name>
+
+# Open PR on GitHub:
+# Base repository: Shaggy13spe/AndroidCodingChallenge
+# Base branch: candidate/<your-name>        <-- important
+# Compare branch: <candidate-username>/candidate/jane-doe
+```
+Do **not** merge your branch into `main`.
 
 ---
 
@@ -114,8 +152,12 @@ git push origin candidate/<your-name>
 There is no single correct solution.
 
 We are interested in:
+
 - How you structure code
-- How you separate concerns
+- How you separate responsibilities
+- How you use Hilt and MVVM effectively
 - How you explain your decisions
+
+If you run out of time, feel free to leave TODOs and explain what you would do next.
 
 Good luck!
