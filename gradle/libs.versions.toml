@@ -1,0 +1,79 @@
+[versions]
+agp = "8.6.0"
+converterMoshi = "2.11.0"
+hiltNavigationCompose = "1.2.0"
+kotlin = "2.0.21"
+kotlinxCoroutinesAndroid = "1.9.0"
+ksp = "2.0.21-1.0.26"
+coreKtx = "1.10.1"
+junit = "4.13.2"
+junitVersion = "1.1.5"
+espressoCore = "3.5.1"
+lifecycleRuntimeCompose = "2.8.7"
+lifecycleRuntimeKtx = "2.6.1"
+activityCompose = "1.8.0"
+composeBom = "2024.04.01"
+lifecycleViewmodelKtx = "2.8.7"
+moshiKotlin = "1.15.2"
+compose-compiler = "1.5.8"
+
+gson = "2.9.0"
+hilt-compiler = "2.51.1"
+hilt-android = "2.51.1"
+
+retrofitVersion = "2.11.0"
+timber = "4.7.1"
+compose-navigation = "2.7.7"
+google-maps = "2.9.1"
+google-places = "3.3.0"
+
+google-services-location = "21.0.1"
+google-services-maps = "18.2.0"
+
+[libraries]
+androidx-compose-material3 = { module = "androidx.compose.material3:material3" }
+androidx-compose-ui = { module = "androidx.compose.ui:ui" }
+androidx-compose-ui-tooling = { module = "androidx.compose.ui:ui-tooling" }
+androidx-compose-ui-tooling-preview = { module = "androidx.compose.ui:ui-tooling-preview" }
+androidx-core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "coreKtx" }
+androidx-hilt-navigation-compose = { module = "androidx.hilt:hilt-navigation-compose", version.ref = "hiltNavigationCompose" }
+androidx-lifecycle-runtime-compose = { module = "androidx.lifecycle:lifecycle-runtime-compose", version.ref = "lifecycleRuntimeCompose" }
+androidx-lifecycle-viewmodel-ktx = { module = "androidx.lifecycle:lifecycle-viewmodel-ktx", version.ref = "lifecycleViewmodelKtx" }
+converter-moshi = { module = "com.squareup.retrofit2:converter-moshi", version.ref = "converterMoshi" }
+
+junit = { group = "junit", name = "junit", version.ref = "junit" }
+androidx-junit = { group = "androidx.test.ext", name = "junit", version.ref = "junitVersion" }
+androidx-espresso-core = { group = "androidx.test.espresso", name = "espresso-core", version.ref = "espressoCore" }
+androidx-lifecycle-runtime-ktx = { group = "androidx.lifecycle", name = "lifecycle-runtime-ktx", version.ref = "lifecycleRuntimeKtx" }
+androidx-activity-compose = { group = "androidx.activity", name = "activity-compose", version.ref = "activityCompose" }
+androidx-compose-bom = { group = "androidx.compose", name = "compose-bom", version.ref = "composeBom" }
+androidx-ui = { group = "androidx.compose.ui", name = "ui" }
+androidx-ui-graphics = { group = "androidx.compose.ui", name = "ui-graphics" }
+androidx-ui-tooling = { group = "androidx.compose.ui", name = "ui-tooling" }
+androidx-ui-tooling-preview = { group = "androidx.compose.ui", name = "ui-tooling-preview" }
+androidx-ui-test-manifest = { group = "androidx.compose.ui", name = "ui-test-manifest" }
+androidx-ui-test-junit4 = { group = "androidx.compose.ui", name = "ui-test-junit4" }
+androidx-material3 = { group = "androidx.compose.material3", name = "material3" }
+kotlinx-coroutines-android = { module = "org.jetbrains.kotlinx:kotlinx-coroutines-android", version.ref = "kotlinxCoroutinesAndroid" }
+moshi-kotlin = { module = "com.squareup.moshi:moshi-kotlin", version.ref = "moshiKotlin" }
+moshi-kotlin-codegen = { module = "com.squareup.moshi:moshi-kotlin-codegen", version.ref = "moshiKotlin" }
+squareup-retrofit2 = { module = "com.squareup.retrofit2:retrofit", version.ref = "retrofitVersion" }
+converter-gson = { group = "com.squareup.retrofit2", name = "converter-gson", version.ref = "gson" }
+hilt-android = { group = "com.google.dagger", name = "hilt-android", version.ref = "hilt-android" }
+hilt-compiler = { group = "com.google.dagger", name = "hilt-compiler", version.ref = "hilt-compiler" }
+timber = { group = "com.jakewharton.timber", name = "timber", version.ref = "timber" }
+compose-navigation = { group = "androidx.navigation", name = "navigation-compose", version.ref = "compose-navigation" }
+
+# Google Services
+google-maps = { group = "com.google.maps.android", name = "maps-compose", version.ref = "google-maps" }
+google-places = { group = "com.google.android.libraries.places", name = "places", version.ref = "google-places" }
+google-play-services-location = { group = "com.google.android.gms", name = "play-services-location", version.ref = "google-services-location" }
+google-play-services-maps = { group = "com.google.android.gms", name = "play-services-maps", version.ref = "google-services-maps" }
+
+
+[plugins]
+android-application = { id = "com.android.application", version.ref = "agp" }
+kotlin-android = { id = "org.jetbrains.kotlin.android", version.ref = "kotlin" }
+hilt-compiler = { id = "com.google.dagger.hilt.android", version.ref = "hilt-compiler" }
+ksp = { id = "com.google.devtools.ksp", version.ref = "ksp" }
+compose-compiler = { id = "org.jetbrains.kotlin.plugin.compose", version.ref = "kotlin" }
