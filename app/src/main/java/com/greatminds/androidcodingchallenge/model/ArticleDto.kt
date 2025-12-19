@@ -1,5 +1,8 @@
 package com.greatminds.androidcodingchallenge.model
 
 data class ArticleDto(
-    val placeholder: Boolean = true
+    val id: String = "",
+    val title: String = "",
+    val body: String = "",
+    val userId: String = "",
 )
