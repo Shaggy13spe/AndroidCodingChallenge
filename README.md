@@ -32,3 +32,126 @@ Build a small Android app using **Jetpack Compose**, **MVVM**, **Clean Architect
 
 Use **JSONPlaceholder** (no API key required):
 
+```
+GET https://jsonplaceholder.typicode.com/posts
+```
+
+Each post contains:
+- `userId`
+- `id`
+- `title`
+- `body`
+
+---
+
+## 🧱 Architecture & DI Requirements
+
+This project is already configured to use **Hilt for dependency injection**.
+
+You are expected to:
+- Use **constructor injection** where appropriate
+- Rely on the existing Hilt setup (`@HiltAndroidApp`, modules, bindings)
+- Inject dependencies into ViewModels using Hilt
+
+### Target architecture
+
+```
+UI (Compose)
+  ↓
+ViewModel
+  ↓
+UseCase
+  ↓
+Repository
+  ↓
+RemoteDataSource (API)
+```
+
+Required concepts:
+- Jetpack Compose
+- ViewModel
+- Coroutines
+- State management (`StateFlow`, `LiveData`, etc.)
+- Dependency inversion
+- Hilt-based dependency injection
+
+---
+
+## 📂 Where to work
+
+All implementation should happen under:
+
+```
+app/src/main/java/com/greatminds/androidcodingchallenge/
+```
+
+The necessary files **already exist** and are **stubbed out** so the project builds.
+Your task is to **complete and connect these files** to achieve the goals of the exercise.
+
+You are expected to work in (at minimum):
+
+- `model/`
+- `data/`
+- `domain/`
+- `ui/`
+- `ui/compose/`
+
+---
+
+## 🖥 UI Requirements
+
+Your UI should:
+
+- Display a list of posts using `LazyColumn`
+- Show **loading**, **error**, and **empty** states
+- Support refresh (pull-to-refresh or button)
+- Handle item click (navigate or expand — your choice)
+
+UI polish is **not** the focus. Clear state handling is.
+
+---
+
+## 🔁 Git Workflow (Required)
+
+You will submit your work using a **branch-per-candidate** approach.
+
+### Branch workflow
+
+Create a branch named:
+
+```
+candidate/<your-name>
+```
+
+Example:
+
+```
+candidate/jane-doe
+```
+
+Then:
+
+```bash
+git checkout -b candidate/<your-name>
+git commit -am "Interview submission"
+git push origin candidate/<your-name>
+```
+
+Do **not** merge your branch into `main`.
+
+---
+
+## 👍 Final note
+
+There is no single correct solution.
+
+We are interested in:
+
+- How you structure code
+- How you separate responsibilities
+- How you use Hilt and MVVM effectively
+- How you explain your decisions
+
+If you run out of time, feel free to leave TODOs and explain what you would do next.
+
+Good luck!
